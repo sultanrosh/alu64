@@ -24,7 +24,7 @@ void test_op(Valu64* alu, VerilatedVcdC* tfp,
 
     alu->eval();              // Evaluate the ALU logic (combinational)
     tfp->dump(main_time);     // Write current signal states to VCD file
-    main_time += 10;          // Increment simulation time by 10 units
+    main_time += 10000000;          // Increment simulation time by 10 units
 
     // Print the test case result to console in readable format
     std::cout << std::left << std::setw(18) << label
