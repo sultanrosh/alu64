@@ -185,8 +185,9 @@ We hook into internal signals and tell Verilator to start saving waveforms to `w
 ---
 
 ## Terminal Output Explanation
+<img width="1225" height="680" alt="terminal results" src="https://github.com/user-attachments/assets/eaccd4e1-e533-4514-b099-75dff00ed83f" />
 
-![Terminal Output](terminal results.png)
+
 
 Each test prints formatted information about the inputs and results. Example:
 
@@ -349,7 +350,8 @@ Test cases include zero addition, signed overflow detection, SLT tests, wrapping
 
 Below are the console results from the Verilator testbench execution:
 
-![Terminal Output](terminal results.png)
+<img width="1917" height="1017" alt="gtkwave result" src="https://github.com/user-attachments/assets/6b5b1e04-4ec7-4c91-a736-89d470cb58eb" />
+
 
 
 ### Notable Test Outputs
@@ -367,7 +369,6 @@ These confirm correct logical behavior of signed and unsigned ops.
 
 The VCD output was analyzed using GTKWave. You can see:
 
-![GTKWave Results](gtkwave result.png)
 <img width="1917" height="1017" alt="gtkwave result" src="https://github.com/user-attachments/assets/e7908e07-8d2b-492f-bc0c-612224389470" />
 
 
