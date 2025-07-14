@@ -185,8 +185,7 @@ We hook into internal signals and tell Verilator to start saving waveforms to `w
 ---
 
 ## Terminal Output Explanation
-<img width="1225" height="680" alt="terminal results" src="https://github.com/user-attachments/assets/eaccd4e1-e533-4514-b099-75dff00ed83f" />
-
+<img width="1225" height="680" alt="terminal results" src="https://github.com/user-attachments/assets/fe32192b-c608-4e31-af81-95d4313b5988" />
 
 
 Each test prints formatted information about the inputs and results. Example:
@@ -217,7 +216,8 @@ Edge cases like signed overflow, signed/unsigned comparisons are also tested.
 
 ## GTKWave Result
 
-![GTKWave Output](gtkwave result.png)
+<img width="1917" height="1017" alt="gtkwave result" src="https://github.com/user-attachments/assets/fbeebd1d-35e8-474d-ac6c-acdd9e2f2c52" />
+
 
 Each line shows a signal: `a`, `b`, `opcode`, `result`, `carry_out`, etc. You can hover and measure time or hex values.
 
@@ -350,7 +350,8 @@ Test cases include zero addition, signed overflow detection, SLT tests, wrapping
 
 Below are the console results from the Verilator testbench execution:
 
-<img width="1917" height="1017" alt="gtkwave result" src="https://github.com/user-attachments/assets/6b5b1e04-4ec7-4c91-a736-89d470cb58eb" />
+<img width="1225" height="680" alt="terminal results" src="https://github.com/user-attachments/assets/47f65685-30d1-4388-8c02-56b93c9efc5f" />
+
 
 
 
