@@ -351,6 +351,7 @@ Below are the console results from the Verilator testbench execution:
 
 ![Terminal Output](terminal results.png)
 
+
 ### Notable Test Outputs
 
 - `ADD_WRAP`: `0xFFFFFFFFFFFFFFFF + 0x1 = 0x0` with carry
@@ -367,6 +368,8 @@ These confirm correct logical behavior of signed and unsigned ops.
 The VCD output was analyzed using GTKWave. You can see:
 
 ![GTKWave Results](gtkwave result.png)
+<img width="1917" height="1017" alt="gtkwave result" src="https://github.com/user-attachments/assets/e7908e07-8d2b-492f-bc0c-612224389470" />
+
 
 - Green transitions represent signal changes over simulation time.
 - Each opcode is simulated after time steps.
