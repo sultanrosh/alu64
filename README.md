@@ -1,4 +1,8 @@
 # ALU64 Project — Full Verilator Simulation and C++ Testbench Walkthrough
+[![Verilog](https://img.shields.io/badge/Language-Verilog-blue.svg)](https://en.wikipedia.org/wiki/Verilog)
+[![Simulated With](https://img.shields.io/badge/Simulated%20With-Verilator-green.svg)](https://www.veripool.org/wiki/verilator)
+[![Platform](https://img.shields.io/badge/Platform-WSL%20%7C%20Ubuntu-orange.svg)](https://learn.microsoft.com/en-us/windows/wsl/)
+
 
 ## Project Overview
 
