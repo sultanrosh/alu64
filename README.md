@@ -1,12 +1,12 @@
 # ALU64 Project — Full Verilator Simulation and C++ Testbench Walkthrough
 
-## 📌 Project Overview
+## Project Overview
 
 This project implements a **64-bit Arithmetic Logic Unit (ALU)** in Verilog and tests it using a **C++ Verilator testbench**. The goal is to not only validate correct logic operations, but to also **understand** simulation mechanics and waveform inspection via **GTKWave**.
 
 ---
 
-## 🧠 Objectives
+## Objectives
 
 - Create a resume-worthy 64-bit ALU with carry-out, overflow, zero, and negative flags.
 - Simulate and verify using **Verilator** and **GTKWave**.
@@ -17,7 +17,7 @@ This project implements a **64-bit Arithmetic Logic Unit (ALU)** in Verilog and 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 alu64/
@@ -35,7 +35,7 @@ alu64/
 
 ---
 
-## 🔧 ALU Verilog Design (`rtl/alu64.v`)
+## ALU Verilog Design (`rtl/alu64.v`)
 
 ```verilog
 `include "alu_opcodes.vh"  // Include macro definitions
@@ -98,7 +98,7 @@ Inside the `case(opcode)` block, different macros like `ALU_ADD` are matched to 
 
 ---
 
-## ⚙️ Opcodes Header (`rtl/alu_opcodes.vh`)
+## Opcodes Header (`rtl/alu_opcodes.vh`)
 
 ```verilog
 `define ALU_ADD   5'd0
@@ -110,7 +110,7 @@ This defines macros that are replaced during preprocessing by Verilog. Using mac
 
 ---
 
-## 🧪 C++ Verilator Testbench (`sim/cpp_testbench_alu64.cpp`)
+## C++ Verilator Testbench (`sim/cpp_testbench_alu64.cpp`)
 
 ### Headers
 
@@ -184,7 +184,7 @@ We hook into internal signals and tell Verilator to start saving waveforms to `w
 
 ---
 
-## ✅ Terminal Output Explanation
+## Terminal Output Explanation
 
 ![Terminal Output](terminal results.png)
 
@@ -196,13 +196,13 @@ ADD             | A: 0xa               , B: 0x14               , Opcode: 0, Resu
 
 This confirms 0xA + 0x14 = 0x1E, opcode `0` = `ALU_ADD`.
 
-✅ **Passed!**
+**Passed!**
 
 Edge cases like signed overflow, signed/unsigned comparisons are also tested.
 
 ---
 
-## 🧠 AHA Moments Captured
+## AHA Moments Captured
 
 - Realizing that C++ `new` allocates on the **heap**, and `->` accesses member variables like `alu->a`.
 - Understanding that `always_comb` in Verilog simulates **pure logic**, not driven by clocks.
@@ -214,7 +214,7 @@ Edge cases like signed overflow, signed/unsigned comparisons are also tested.
 
 ---
 
-## 🔍 GTKWave Result
+## GTKWave Result
 
 ![GTKWave Output](gtkwave result.png)
 
@@ -227,7 +227,7 @@ You can confirm operations like:
 
 ---
 
-## 🧾 How to Run
+## How to Run
 
 ### Build
 
@@ -257,7 +257,7 @@ gtkwave wave.vcd
 
 ---
 
-## 🌐 GitHub Commands (using SSH)
+## GitHub Commands (using SSH)
 
 ```bash
 git init
@@ -266,12 +266,11 @@ git add .
 git commit -m "Initial commit for ALU64"
 git push -u origin main
 ```
-
-✅ SSH already authenticated from `ssh -T git@github.com`
+SSH already authenticated from `ssh -T git@github.com`
 
 ---
 
-## 🔚 Summary
+## Summary
 
 You have successfully:
 - Created a 64-bit Verilog ALU with overflow/carry logic
@@ -280,21 +279,19 @@ You have successfully:
 - Fixed latching and macro issues
 - Connected this project to GitHub with version control
 
-🧠 You now understand both **hardware logic** and **testbench software glue** that drives it.
-
 ---
 
 
 # 64-bit ALU Project (Verilog + Verilator + GTKWave)
 
-## 📌 Overview
+## Overview
 This project implements a **64-bit Arithmetic Logic Unit (ALU)** in Verilog. It supports a comprehensive set of arithmetic and logical operations, including signed/unsigned comparisons, bit shifts, and overflow detection.
 
 The ALU is tested using a **C++ Verilator testbench**, with waveform outputs visualized in GTKWave.
 
 ---
 
-## ✅ Features of the ALU
+## Features of the ALU
 - 64-bit wide operands and result
 - Operations supported:
   - `ADD`, `SUB`
@@ -309,7 +306,7 @@ The ALU is tested using a **C++ Verilator testbench**, with waveform outputs vis
 
 ---
 
-## 🧠 AHA Moments
+## AHA Moments
 
 - **Two's Complement**: Realized how binary subtraction is implemented using two's complement. The carry-out and overflow logic are crucial to accurate computation.
 - **Shift Operations**: Understood the difference between `SRA` and `SRL`, especially when interpreting signed vs unsigned right shifts.
@@ -317,7 +314,7 @@ The ALU is tested using a **C++ Verilator testbench**, with waveform outputs vis
 
 ---
 
-## 🧪 Testbench Explained
+## Testbench Explained
 
 ### C++ Testbench (Verilator)
 
@@ -348,7 +345,7 @@ Test cases include zero addition, signed overflow detection, SLT tests, wrapping
 
 ---
 
-## 🔍 Terminal Output Results
+## Terminal Output Results
 
 Below are the console results from the Verilator testbench execution:
 
@@ -361,11 +358,11 @@ Below are the console results from the Verilator testbench execution:
 - `SRA_-1`: Arithmetic shift of -1 (all 1s) keeps sign: `0xFFFFFFFFFFFFFFFF`
 - `SLTU_true`: `0x1 < 0xA` → result = 1
 
-✅ These confirm correct logical behavior of signed and unsigned ops.
+These confirm correct logical behavior of signed and unsigned ops.
 
 ---
 
-## 📈 GTKWave Visualization
+## GTKWave Visualization
 
 The VCD output was analyzed using GTKWave. You can see:
 
@@ -381,7 +378,7 @@ E.g.:
 
 ---
 
-## 🔧 Build Instructions
+## Build Instructions
 
 ```sh
 make build   # Verilates the code
@@ -405,7 +402,7 @@ wave:
 
 ---
 
-## 🗃 Project Structure
+## Project Structure
 
 ```
 alu64/
@@ -422,7 +419,7 @@ alu64/
 
 ---
 
-## 📚 Lessons Learned
+## Lessons Learned
 
 - Verilator doesn’t simulate clocked behavior unless explicitly defined — perfect for always_comb logic.
 - Understanding bit manipulation (e.g. `a << b[5:0]`) is critical for hardware arithmetic.
@@ -431,7 +428,7 @@ alu64/
 
 ---
 
-## 💡 Future Additions
+## Future Additions
 
 - Support for MUL and DIV
 - Flag outputs for parity or sign extension
@@ -439,7 +436,7 @@ alu64/
 
 ---
 
-## 📤 GitHub Integration
+## GitHub Integration
 
 To push this project:
 
@@ -458,8 +455,6 @@ ssh -T git@github.com
 
 ---
 
-## 🎯 Summary
+## Summary
 
 This 64-bit ALU project is **fully functional**, **testbench-verified**, and **GTKWave-visualized**. It demonstrates core digital logic skills and simulation proficiency.
-
-Use it as a building block for your future **custom CPU architecture**! 🚀
